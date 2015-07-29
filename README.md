@@ -9,16 +9,20 @@ lsusb on a terminal) you can use this application to send an email every time yo
 
 ## Prerequisites
 
-Need to have Perl installed and a couple of Perl packages:
+This software makes use of the libusb open source library: [libusb on Github](https://github.com/libusb/libusb)
+
+Also need to have Perl installed and a couple of Perl packages:
 [Email::Send::SMTP::Gmail dependencies](http://deps.cpantesters.org/?module=Email%3A%3ASend%3A%3ASMTP%3A%3AGmail;perl=latest)
 
-To run this program safely on your machine ensure that the Perl script is on the same folder as the executable.
+To run this program safely on your machine please make sure that the Perl script is on the same folder as the executable.
 
 ## TODO
 
 Provide basic interface for accepting the emails and passwords as input from the keyboard, instead of having to edit the Perl script.
 
-Add portability code for Windows machines.
+Make the code portable for use on Windows machines.
+
+Add selection menu, for the user to choose any USB device from a list of all USB devices currently connected on the system.
 
 ### License stuff
 
