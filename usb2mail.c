@@ -113,20 +113,24 @@ int create_ilist (libusb_device **devs, ssize_t c, struct Indexed_idev_node **id
 			libusb_close(temp_dev_handle);
 			return FAILURE;
 		}
-		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, temp_desc.iProduct, temp_product, 264);
+		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, 
+												   temp_desc.iProduct, temp_product, 264);
 		if (!err_num.err_str) {
 			print_error(err_num.err_str);
 			libusb_close(temp_dev_handle);
 			return FAILURE;
 		}
-		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, temp_desc.iManufacturer, temp_mnf, 264);
+		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, 
+												   temp_desc.iManufacturer, temp_mnf, 264);
 		if (!err_num.err_str) {
 			print_error(err_num.err_str);
 			libusb_close(temp_dev_handle);
 			return FAILURE;
 		}
-		*idevllist = add_dev_node(*idevllist, temp_desc.idVendor, temp_desc.idProduct, libusb_get_bus_number(devs[i])); 
-		printf("(%d)%s, %s ID = %04x:%04x\n", i+1, temp_mnf, temp_product, temp_desc.idVendor, temp_desc.idProduct);
+		*idevllist = add_dev_node(*idevllist, temp_desc.idVendor, temp_desc.idProduct, 
+							 libusb_get_bus_number(devs[i])); 
+		printf("(%d)%s, %s ID = %04x:%04x\n", i+1, temp_mnf, 
+			  temp_product, temp_desc.idVendor, temp_desc.idProduct);
 		libusb_close(temp_dev_handle);
 	}
 	return SUCCESS;
@@ -233,7 +237,8 @@ int main (int argc, char *argv[], char *environ[])
 		user_input = getchar();
 		clear_buffer();
 		if (user_input != 'R' && user_input != 'r') {
-			err_num.err_inp = valid_index(idevllist, user_input, &target_vID, &target_dID, &target_bus);
+			err_num.err_inp = valid_index(idevllist, user_input, 
+									&target_vID, &target_dID, &target_bus);
 			if (err_num.err_inp) {
 				fprintf(stderr, "Bad input\n");
 				sleep(2);
@@ -270,4 +275,3 @@ int main (int argc, char *argv[], char *environ[])
 	libusb_exit(NULL);
 	return SUCCESS;
 }
-
