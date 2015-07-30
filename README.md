@@ -11,10 +11,9 @@ lsusb on a terminal) you can use this application to send an email every time yo
 
 This software makes use of the libusb open source library: [libusb on Github](https://github.com/libusb/libusb)
 
-Also need to have Perl installed and a couple of Perl packages:
-[Email::Send::SMTP::Gmail dependencies](http://deps.cpantesters.org/?module=Email%3A%3ASend%3A%3ASMTP%3A%3AGmail;perl=latest)
+Also need to have the Email::Send::SMTP::Gmail perl module installed: cpan install Email::Send::SMTP::Gmail
 
-To run this program safely on your machine please make sure that the Perl script is on the same folder as the executable.
+To run this program successfully on your machine please make sure that the perl script is on the same folder as the executable.
 
 ## TODO
 
