@@ -2,3 +2,4 @@
 *.exe
 *.o
 .kateproject
+old_source
