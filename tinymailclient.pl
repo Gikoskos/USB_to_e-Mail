@@ -2,11 +2,11 @@ use strict;
 use warnings;
 use Email::Send::SMTP::Gmail;
 my $mail=Email::Send::SMTP::Gmail->new( -smtp=>'smtp.gmail.com',
-					-login=>'example@gmail.com',
-					-pass=>'this_is_your_password');
+					-login=>'sender@gmail.com',
+					-pass=>'password_goes_here');
 
-$mail->send(-to=>'example@example.example', 
+$mail->send(-to=>'receiver@gmail.com', 
 	-subject=>'SUBJECT',
-	-body=>'ALARM',
+	-body=>'BODY_TEXT',
 	-contenttype=>'text/html');
 $mail->bye;
