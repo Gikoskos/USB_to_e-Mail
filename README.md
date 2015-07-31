@@ -7,6 +7,10 @@ just by inserting a USB device in the hub.
 It works kinda like an alarm; the loop never ends, so every time it recognizes your USB device on the computer it
 sends the email.
 
+If you don't want to use root compile usb2mailID.c, but you also need to have the IDs of your USB device.
+
+For usb2mail.c you just choose your device from a dynamic list.
+
 ## Prerequisites
 
 This software makes use of the libusb open source library: [libusb on Github](https://github.com/libusb/libusb)
