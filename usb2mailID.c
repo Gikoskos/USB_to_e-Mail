@@ -14,6 +14,7 @@
 /*****************************************************************************/
 /*                                                                           */
 /* sends e-mail automatically after you insert a USB device of your choosing */
+/*            (you need to type in your device's ID in this version)         */
 /*                                                                           */
 /*              by cyberchiller@gmail.com    Copyright 2015                  */
 /*                                                                           */
