@@ -24,9 +24,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <signal.h>
+
 
 #define SUCCESS 0
 #define FAILURE 1
+
+
 
 struct Indexed_idev_node{
 	unsigned short idx;
@@ -37,12 +41,12 @@ struct Indexed_idev_node{
 };
 
 union Error_codes {
-	int err_init;
-	int err_handle;
-	int err_desc;
-	int err_str;
-	int err_print;
-	int err_inp;
+	ssize_t err_init;
+	ssize_t err_handle;
+	ssize_t err_desc;
+	ssize_t err_str;
+	ssize_t err_print;
+	ssize_t err_inp;
 };
 
 static union Error_codes err_num;
@@ -57,6 +61,7 @@ void print_idev_list (struct Indexed_idev_node*);
 void destroy_idev_list (struct Indexed_idev_node*);
 int valid_index (struct Indexed_idev_node*, char, uint16_t*, uint16_t*, uint8_t*);
 int find_device (libusb_device**, ssize_t, uint16_t, uint16_t, uint8_t);
+void sig_handle (int);
 
 
 void clear_buffer (void)
@@ -200,7 +205,12 @@ int find_device (libusb_device **list, ssize_t dcount,
 	return FAILURE;
 }
 
-
+#ifdef DEBUG
+void sig_handle (int sig)
+{
+	signal(sig, SIG_IGN);
+}
+#endif
 
 int main (int argc, char *argv[], char *environ[])
 {
@@ -210,7 +220,10 @@ int main (int argc, char *argv[], char *environ[])
 	uint16_t target_vID, target_dID;
 	uint8_t target_bus;
 	int ready = FAILURE;
-	
+#ifdef DEBUG
+	signal(SIGINT, sig_handle);
+	signal(SIGTERM, sig_handle);
+#endif
 	STRT:
 	puts("\033[2J");
 	err_num.err_init = libusb_init(NULL);
