@@ -29,7 +29,7 @@ The USB device you chose initially has to be reinserted on the same Bus it was c
 it won't work. I did this to avoid ID conflict, since some devices share the same IDs.
 
 Also on Linux you need root privileges to run this application. I read there's a workaround by writing your own udev rules
-but I don't have time to work on this now. Feel free to do your own research on this.
+but I don't have time to work on this now. Feel free to do your own research.
 
 ### License stuff
 
