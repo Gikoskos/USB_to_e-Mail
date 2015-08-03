@@ -119,14 +119,14 @@ int create_ilist (libusb_device **devs, ssize_t c, struct Indexed_idev_node **id
 			return FAILURE;
 		}
 		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, 
-												   temp_desc.iProduct, temp_product, 264);
+									temp_desc.iProduct, temp_product, 264);
 		if (!err_num.err_str) {
 			print_error(err_num.err_str);
 			libusb_close(temp_dev_handle);
 			return FAILURE;
 		}
 		err_num.err_str = libusb_get_string_descriptor_ascii(temp_dev_handle, 
-												   temp_desc.iManufacturer, temp_mnf, 264);
+									temp_desc.iManufacturer, temp_mnf, 264);
 		if (!err_num.err_str) {
 			print_error(err_num.err_str);
 			libusb_close(temp_dev_handle);
