@@ -9,8 +9,6 @@ sends the email.
 
 If you don't want to use root compile usb2mailID.c, but you also need to have the IDs of your USB device.
 
-For usb2mail.c you just choose your device from a dynamic list.
-
 ## Prerequisites
 
 This software makes use of the libusb open source library: [libusb on Github](https://github.com/libusb/libusb)
@@ -21,11 +19,11 @@ To run this program successfully on your machine please make sure that the perl 
 
 ## TODO
 
-Provide basic interface for accepting the emails and passwords as input from the keyboard, instead of having to edit the Perl script.
+ * Provide basic interface for accepting the emails and passwords as input from the keyboard, instead of having to edit the Perl script.
 
-Make the code portable for use on Windows machines.
+ * Make the code portable for use on Windows machines.
 
-Add selection menu, for the user to choose any USB device from a list of all USB devices currently connected on the system. (DONE)
+ * Add selection menu, for the user to choose any USB device from a list of all USB devices currently connected on the system. (DONE)
 
 ## Caveats
 
