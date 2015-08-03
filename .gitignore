@@ -1,5 +1,9 @@
-*.txt
-*.exe
-*.o
-.kateproject
-old_source
+!*.pl
+!.gitignore
+!*.c
+!LICENSE
+!Makefile
+!README.md
+*
+*.*
+*/
