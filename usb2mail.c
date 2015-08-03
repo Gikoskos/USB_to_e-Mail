@@ -75,12 +75,12 @@ struct Indexed_idev_node *add_dev_node (struct Indexed_idev_node *idevllist,
 {
 	struct Indexed_idev_node *new_idev = malloc(sizeof(struct Indexed_idev_node));
 	int i = 1;
-	
+
 	new_idev->nxt = NULL;
 	new_idev->vend_ID = vID;
 	new_idev->dev_ID = dID;
 	new_idev->d_bus = ibus;
-	
+
 	if (!idevllist) {
 		idevllist = malloc(sizeof(struct Indexed_idev_node));
 		new_idev->idx = i;
@@ -105,7 +105,7 @@ int create_ilist (libusb_device **devs, ssize_t c, struct Indexed_idev_node **id
 	libusb_device_handle *temp_dev_handle = NULL;
 	struct libusb_device_descriptor temp_desc;
 	unsigned char temp_product[265], temp_mnf[265];
-	
+
 	for (; i < c; i++) {
 		err_num.err_handle = libusb_open(devs[i], &temp_dev_handle);
 		if (err_num.err_handle) {
@@ -205,7 +205,7 @@ int find_device (libusb_device **list, ssize_t dcount,
 	return FAILURE;
 }
 
-#ifdef DEBUG
+#ifdef NDEBUG
 void sig_handle (int sig)
 {
 	signal(sig, SIG_IGN);
@@ -220,7 +220,7 @@ int main (int argc, char *argv[], char *environ[])
 	uint16_t target_vID, target_dID;
 	uint8_t target_bus;
 	int ready = FAILURE;
-#ifdef DEBUG
+#ifdef NDEBUG
 	signal(SIGINT, sig_handle);
 	signal(SIGTERM, sig_handle);
 #endif
