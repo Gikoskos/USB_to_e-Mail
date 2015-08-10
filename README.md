@@ -37,6 +37,6 @@ but I don't have time to work on this now. Feel free to do your own research.
 
 ![GPLv3 logo](http://www.gnu.org/graphics/gplv3-127x51.png)
 
-See COPYING for more information.
+See LICENSE for more information.
 
 Copyright © 2015 G.K. <cyberchiller@gmail.com>
