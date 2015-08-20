@@ -11,13 +11,13 @@
 *    You should have received a copy of the GNU General Public License
 *    along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-/*****************************************************************************/
-/*                                                                           */
-/* sends e-mail automatically after you insert a USB device of your choosing */
-/*                                                                           */
-/*              by cyberchiller@gmail.com    Copyright 2015                  */
-/*                                                                           */
-/*****************************************************************************/
+/*****************************************************************************
+ *                                                                           *
+ * sends e-mail automatically after you insert a USB device of your choosing *
+ *                                                                           *
+ *              by cyberchiller@gmail.com    Copyright 2015                  *
+ *                                                                           *
+ *****************************************************************************/
 
 #include <stdio.h>
 #include <libusb.h>
