@@ -85,7 +85,6 @@ struct Indexed_idev_node *add_dev_node (struct Indexed_idev_node *idevllist,
 		idevllist = malloc(sizeof(struct Indexed_idev_node));
 		new_idev->idx = i;
 		idevllist = new_idev;
-		return idevllist;
 	} else {
 		struct Indexed_idev_node *curr = idevllist;
 		i++;
